@@ -245,6 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2136f4c51c1552842909b83e3c984d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cubesSpawnedPort: {fileID: 11400000, guid: fbd23ee73e28314488c815db81666cd8, type: 2}
+  resetEnvironmentPort: {fileID: 11400000, guid: 18094ddcf0ae2d04e9fc2f8ec2c7e3d6, type: 2}
+  environmentSetupCompletePort: {fileID: 11400000, guid: 235b467f4d53bc04196874a092dbd215, type: 2}
   CubeTypeSwitcher: 0
   _animCube: {fileID: 5741341085106569777, guid: c8f693d9082124d4fb1a8815635e7c77, type: 3}
   _shadeCube: {fileID: 8772112064009934040, guid: c3a3455a6100af74eb54e8d890a43750, type: 3}

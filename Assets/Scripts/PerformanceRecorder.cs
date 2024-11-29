@@ -10,43 +10,29 @@ public class PerformanceRecorder : MonoBehaviour
     private List<float> _elapsedMilisecondsList;
     public float averageTimeForCurrentSample;
 
-    private string _sorterType = "";
 
     private void Start()
     {
         _elapsedMilisecondsList = new List<float>();
     }
 
-    /*
-    public void Record(Sorters sorters)
+    
+    public void Record()
     {
-        if (sorters is InsertSort) // Might move this to a different class or method later.
-        {
-            _recorder = Recorder.Get("InsertSort Sampler");
-            _sorterType = "InsertSort";
-        }
-        else if (sorters is IcbcsSort)
-        {
-            _recorder = Recorder.Get("Icbcs Sampler");
-            _sorterType = "IcbcsSort";
-        }
-        else if (sorters is MergeSort)
-        {
-            _recorder = Recorder.Get("MergeSort Sampler");
-            _sorterType = "MergeSort";
-        }
+        _recorder = Recorder.Get("Cube Sampler");
+        
 
         if (_recorder.isValid)
         {
-            _elapsedMilliSec = _recorder.elapsedNanoseconds * 0.000001f; // Solved: "Yes, it did take the last frame, so it could not be in fixed update." This doesn't work for some reason? Maybe because it takes last frame time? "https://docs.unity3d.com/ScriptReference/Profiling.Recorder-elapsedNanoseconds.html"
+            _elapsedMilliSec = _recorder.elapsedNanoseconds * 0.000001f;
             _elapsedMilisecondsList.Add(_elapsedMilliSec);
             AverageMilliSec();
-            PrintElapsedTimeForSorter();
+            PrintElapsedTime();
         }
         else
             Debug.LogWarning("Recorder is invalid.");
     }
-    */
+    
     private void PrintElapsedTime()
     {
         Debug.Log("Time elapsed: " + _elapsedMilliSec);

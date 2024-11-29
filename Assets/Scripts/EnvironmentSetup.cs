@@ -4,6 +4,8 @@ using UnityEngine;
 public class EnvironmentSetup : MonoBehaviour
 {
     [SerializeField] private CubesSpawnedPortObject cubesSpawnedPort;
+    [SerializeField] private ResetEnvironmentPort resetEnvironmentPort;
+    [SerializeField] private EnvironmentSetupCompletePort environmentSetupCompletePort;
 
     [SerializeField, Tooltip("True will spawn animated cube and False will spawn shader animated cube.")] private bool CubeTypeSwitcher;
 
@@ -18,12 +20,12 @@ public class EnvironmentSetup : MonoBehaviour
 
     private void OnEnable()
     {
-        
+        resetEnvironmentPort.ResetEnvironment += ResetEnvironment;
     }
 
     private void OnDisable()
     {
-        
+        resetEnvironmentPort.ResetEnvironment -= ResetEnvironment;
     }
 
     private void Start()
@@ -68,7 +70,9 @@ public class EnvironmentSetup : MonoBehaviour
             SpawnCube();
             _cubeSpawnCurrent++;
         }
+        cubesSpawnedPort.OnCubesSpawned();
 
+        environmentSetupCompletePort.OnEnvironmentSetupCompleted();
     }
 
     private void SpawnCube()
