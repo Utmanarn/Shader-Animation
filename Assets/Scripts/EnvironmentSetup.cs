@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnvironmentSetup : MonoBehaviour
 {
+    [SerializeField] private CubesSpawnedPortObject cubesSpawnedPort;
+
     [SerializeField, Tooltip("True will spawn animated cube and False will spawn shader animated cube.")] private bool CubeTypeSwitcher;
 
     [SerializeField] private GameObject _animCube;
