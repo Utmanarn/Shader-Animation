@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class EnvironmentSetup : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class EnvironmentSetup : MonoBehaviour
     private float _spawnAxisX, _spawnAxisZ;
 
     private static List<GameObject> _cubeList;
+
+    private Sampler _sampler;
 
     private void OnEnable()
     {
@@ -48,7 +51,7 @@ public class EnvironmentSetup : MonoBehaviour
 
     public void ResetEnvironment()
     {
-        for (int i = _cubeList.Count - 1; i >= 0; i--)
+        for (int i = _cubeList.Count - 1; i >= 0; i--) // For this experiment we might not need to delete the already spawned cubes to save time on spawning them all again. They might get unsynced in rotation but that should not be a problem.
         {
             GameObject cube = _cubeList[i];
             _cubeList.RemoveAt(i);
@@ -86,10 +89,10 @@ public class EnvironmentSetup : MonoBehaviour
 
         _cubeList.Add(localCube);
 
-        _spawnAxisX++;
-        if (_spawnAxisX > 10f)
+        _spawnAxisX += 2;
+        if (_spawnAxisX >= 10f)
         {
-            _spawnAxisZ++;
+            _spawnAxisZ += 2;
             _spawnAxisX = 0;
         }
     }

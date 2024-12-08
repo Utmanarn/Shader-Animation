@@ -8,7 +8,7 @@ public class PerformanceRecorder : MonoBehaviour
     private Recorder _recorder;
     private float _elapsedMilliSec;
     private List<float> _elapsedMilisecondsList;
-    public float averageTimeForCurrentSample;
+    public float averageTimeForCurrentSample { get; private set; }
 
 
     private void Start()
@@ -19,12 +19,12 @@ public class PerformanceRecorder : MonoBehaviour
     
     public void Record()
     {
-        _recorder = Recorder.Get("Cube Sampler");
+        _recorder = Recorder.Get(""); // TODO: It isn't recording!
         
 
         if (_recorder.isValid)
         {
-            _elapsedMilliSec = _recorder.elapsedNanoseconds * 0.000001f;
+            _elapsedMilliSec = _recorder.gpuElapsedNanoseconds * 0.000001f; // GPU elapsed has a delay of 3 frames. This collects data from 3 frames ago when called.
             _elapsedMilisecondsList.Add(_elapsedMilliSec);
             AverageMilliSec();
             PrintElapsedTime();
