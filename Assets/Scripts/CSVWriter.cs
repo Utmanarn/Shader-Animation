@@ -39,11 +39,11 @@ public class CSVWriter : MonoBehaviour
                 }
                 if (frameTime != null && frameTime.Count > i)
                 {
-                    streamWriter.Write(frameTime[i] + "; ");
+                    streamWriter.Write(frameTime[i]);
                 }
                 else
                 {
-                    streamWriter.Write("0" + "; ");
+                    streamWriter.Write("0");
                 }
             }
 
