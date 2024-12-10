@@ -251,7 +251,7 @@ MonoBehaviour:
   cubesSpawnedPort: {fileID: 11400000, guid: fbd23ee73e28314488c815db81666cd8, type: 2}
   resetEnvironmentPort: {fileID: 11400000, guid: 18094ddcf0ae2d04e9fc2f8ec2c7e3d6, type: 2}
   environmentSetupCompletePort: {fileID: 11400000, guid: 235b467f4d53bc04196874a092dbd215, type: 2}
-  _cubeTypeSwitcher: 0
+  _cubeTypeSwitcher: 1
   _animCube: {fileID: 7811883638120945743, guid: c8f693d9082124d4fb1a8815635e7c77, type: 3}
   _shadeCube: {fileID: 8772112064009934040, guid: c3a3455a6100af74eb54e8d890a43750, type: 3}
   _maxCubesToSpawnOnNewItteration: 10
@@ -381,7 +381,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &1695607729
