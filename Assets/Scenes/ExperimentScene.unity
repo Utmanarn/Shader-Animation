@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 634252586}
   - component: {fileID: 634252588}
   - component: {fileID: 634252589}
+  - component: {fileID: 634252590}
   m_Layer: 0
   m_Name: SceneManger
   m_TagString: Untagged
@@ -250,7 +251,7 @@ MonoBehaviour:
   cubesSpawnedPort: {fileID: 11400000, guid: fbd23ee73e28314488c815db81666cd8, type: 2}
   resetEnvironmentPort: {fileID: 11400000, guid: 18094ddcf0ae2d04e9fc2f8ec2c7e3d6, type: 2}
   environmentSetupCompletePort: {fileID: 11400000, guid: 235b467f4d53bc04196874a092dbd215, type: 2}
-  CubeTypeSwitcher: 1
+  _cubeTypeSwitcher: 0
   _animCube: {fileID: 7811883638120945743, guid: c8f693d9082124d4fb1a8815635e7c77, type: 3}
   _shadeCube: {fileID: 8772112064009934040, guid: c3a3455a6100af74eb54e8d890a43750, type: 3}
   _maxCubesToSpawnOnNewItteration: 10
@@ -293,7 +294,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d77b10b9bd7210408f45f47ea52da3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _environmentSetupCompletePort: {fileID: 11400000, guid: 235b467f4d53bc04196874a092dbd215, type: 2}
+  _maxRuntimeAllowed: 200000
+--- !u!114 &634252590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634252585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21811df8d8f5f347b10cb4917ca0939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695607726
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,7 +342,7 @@ Camera:
   m_GameObject: {fileID: 1695607726}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -379,13 +392,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695607726}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: -2.5, y: 4.4, z: -11.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
